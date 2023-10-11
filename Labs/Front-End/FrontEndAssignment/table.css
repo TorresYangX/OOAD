@@ -1,0 +1,227 @@
+@CHARSET "UTF-8";
+#a {
+    font-size: 20px;
+    font-style: italic;
+}
+table {
+    border: 2px solid black;
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin: 0 auto;
+}
+th {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+td {
+    border: 1px solid black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+font-size: 15px;
+}
+
+.btn {
+    /* 文字颜色 */
+    color: #0099CC;
+    /* 清除背景色 */
+    background: transparent;
+    /* 边框样式、颜色、宽度 */
+    border: 2px solid #0099CC;
+    /* 给边框添加圆角 */
+    border-radius: 6px;
+    /* 字母转大写 */
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.btn1 {
+    background-color: transparent;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+/* 悬停样式 */
+.btn1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.btn2 {
+    background-size: cover;
+    background: #92c7eb url('https://img-qn.51miz.com/Element/00/77/33/34/92a6cbb4_E773334_29614432.png') center;
+    background-size: 100% 100%;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 45px;
+    border-radius: 900px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+    }
+.btn2:hover {
+    width: 50px;
+    height: 50px;
+}
+
+.btn3 {
+    background-size: cover;
+    background: #92c7eb url('https://img.51miz.com/Element/00/77/78/58/5719b37b_E777858_556561ae.png') center;
+    background-size: 100% 100%;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 45px;
+    border-radius: 900px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.btn3:hover {
+    width: 50px;
+    height: 50px;
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    /* IE9以下不支持rgba模式 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 兼容IE8及以下 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    display: none;
+}
+.popup {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 40px;
+    background:
+            linear-gradient(to top, #4caf50, #4caf50 10px, transparent 10px),
+            linear-gradient(to right, #c1ef8c, #c1ef8c 10px, transparent 10px),
+            linear-gradient(to bottom, #8bc34a, #8bc34a 10px, transparent 10px),
+            linear-gradient(to left, #009688, #009688 10px, transparent 10px),
+            darkseagreen;
+    width: 400px;
+    height: 520px;
+    position: absolute;
+    opacity: 0.9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+.popup_title {
+    /*dark font color but not black*/
+    color: #333333;
+    font-size: 2.5rem;
+    -webkit-animation: shining 0.5s alternate infinite;
+    animation: shining 0.5s alternate infinite;
+}
+@-webkit-keyframes shining {
+    from {
+        text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
+    }
+
+    to {
+        text-shadow: 0 0 5px lightblue, 0 0 10px lightblue, 0 0 15px lightblue, 0 0 20px skyblue, 0 0 25px skyblue, 0 0 30px skyblue;
+    }
+}
+
+/* 弹出框的按钮栏 */
+.popup_btn {
+    padding-bottom: 10px;
+}
+/* 弹出框的按钮 */
+.popup_btn button {
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    margin: 40px 10px;
+    color: #ffffff;
+    background-color: #337ab7;
+    font-size: 15px;
+}
+
+input[type=text] {
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+}
+
+select {
+    appearance: none;
+    background-color: white;
+    border: 2px solid #337ab7;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 40%;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+.select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid #337ab7;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+}
+input[type="date"] {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 150px;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    border-radius: 4px;
+    border: 2px solid #337ab7;
+}
+
+input[type=time] {
+    border: 2px solid #337ab7;
+    border-radius: 4px;
+}
+
+.modeBtn{
+    background-color: #337ab7;
+    color: white;
+    border: 2px solid #008CBA;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+
+
+
