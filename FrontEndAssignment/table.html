@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Rooms list</title>
+    <link rel="stylesheet" type="text/css" href="table.css"/>
+    <script type="text/javascript" src="table.js"></script>
+    <style>
+        body {
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        body::after {
+            content: "";
+            background: url('https://liveimages.videocc.net/uploaded/images/2022/07/gbrdf8rnqv.jpg') no-repeat center;
+            background-size: cover;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body onload="">
+<input type="button" name="mode" value="mode" onclick="switchBackground()" class="modeBtn" >
+<table>
+    <caption id="a"><h2>Conference Rooms</h2></caption>
+    <tr>
+        <th>Room Name</th>
+        <th>Department</th>
+        <th>Type</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Max Duration</th>
+        <th>Operation</th>
+    </tr>
+    <tbody id="tbody" style="display: none">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <input type="button" class="btn2"  onclick="onClickDelete(this)">
+        <input type="button" class="btn3"  onclick="onClickEdit(this)">
+      </td>
+    </tr>
+    </tbody>
+</table>
+<input type="button" name="popAdd" value="Add Room" onclick="showPopup()" class="btn btn1" style="display: block; margin: 20px auto;">
+<div id="overlay">
+    <div class="popup">
+        <p class="popup_title">Add Room</p>
+            <form name="form1">
+                <p>
+                    <label for="room-name">Room Name:</label>
+                    <input type="text" id="room-name" name="room-name">
+                </p>
+                Type:
+                    <input type="radio" id="type1" name="type" value="Small">
+                    <label for="type1">Small</label>
+                    <input type="radio" id="type2" name="type" value="Medium">
+                    <label for="type2">Medium</label>
+                    <input type="radio" id="type3" name="type" value="Large">
+                    <label for="type3">Large</label>
+                <br>
+                <p>
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department">
+                </p>
+                Date:
+                    <input type="date" id="date" name="date" value="2018-07-22" min="2018-01-01" max="2099-12-31">
+                    <label for="date"></label>
+                <script>
+                    window.onload = function(){
+                        let today = new Date();
+                        today.setDate(today.getDate() + 1);
+                        let dd = String(today.getDate()).padStart(2, '0');
+                        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        let yyyy = today.getFullYear();
+                        today = yyyy + '-' + mm + '-' + dd;
+                        document.getElementById("date").value = today;
+                    }
+                </script>
+                <br>
+                <br/> Start Time:
+                    <input type="time" id="timeStart" name="time" min="09:00" max="18:00" required>
+                    <label for="timeStart"></label>
+                <br>
+                <br/> End Time:
+                    <input type="time" id="timeEnd" name="time" min="09:00" max="18:00" required>
+                    <label for="timeEnd"></label>
+                <br>
+                <br/> Location:
+                    <label for="location"></label>
+                    <select id="location" name="location">
+                      <option>Teaching Building No.1</option>
+                      <option>Lecture Hall</option>
+                      <option>Research Building Lecture Hall</option>
+                      <option>Library Conference Hall</option>
+                      <option>South Building</option>
+                    </select>
+                    <label for="room_number"></label>
+                    <input type="text" id="room_number" name="room_number" style="display: inline-block;" size="2">
+                <br/>
+                <p>
+                    <label for="duration">Max Duration</label>
+                    <input type="text" id="duration" name="duration">
+                </p>
+            </form>
+        <div class="popup_btn">
+            <button class="submitBtn" onclick="onClickSubmit()">submit</button>
+            <button class="cancelBtn" onclick="hidePopup()">cancel</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
